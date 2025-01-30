@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:50:24 by pde-petr          #+#    #+#             */
-/*   Updated: 2025/01/30 16:29:42 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:40:23 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str, int *error)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		if (number > (LONG_MAX - (*str - 48)) / 10)
+		if (number > (INT_MAX - (*str - 48)) / 10)
 		{
 			*error = -1;
 		}

@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:43:38 by pde-petr          #+#    #+#             */
-/*   Updated: 2025/02/11 16:25:42 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:43:34 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <stdlib.h>
+//#include <stdlib.h>
 # include <unistd.h>
+
+# define HEXACAPS "0123456789ABCDEF"
+# define HEXAMIN "0123456789abcdef"
 
 typedef struct s_list
 {
@@ -67,11 +70,18 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-# define HEXACAPS "0123456789ABCDEF"
-# define HEXAMIN "0123456789abcdef"
 
 int					ft_printhexa(unsigned long int hexa, char type);
 int					ft_printf_format(char format, va_list arg);
 int					ft_printf(const char *format, ...);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char				*get_next_line(int fd);
+int					size_char_in_text(char *text, int ascii);
+char				*ft_charjoin(char *buf, char *malloc_tamp, size_t i);
+char				*line_by_line(char *buf, size_t i, int fd,
+						char *malloc_tamp);
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:34:00 by pde-petr          #+#    #+#             */
-/*   Updated: 2024/11/20 16:33:30 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:46:19 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	ft_count_words(char const *s, char c)
 {

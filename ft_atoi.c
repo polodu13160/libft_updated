@@ -6,14 +6,14 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:50:24 by pde-petr          #+#    #+#             */
-/*   Updated: 2024/11/19 20:41:09 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:05:11 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int *error)
 {
 	int		neg;
 	long	number;
@@ -29,17 +29,15 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		if (number > (LONG_MAX - (*str - 48)) / 10)
+		if ((neg == 1 && (number > (INT_MAX - (*str - 48)) / 10)) || (neg == -1
+				&& (number > (2147483648 - (*str - 48)) / 10)))
 		{
-			if (neg == 1)
-				return (-1);
-			else
-				return (0);
+			*error = -1;
 		}
 		number = number * 10 + (*str - 48);
 		str++;
 	}
-	return ((int)number * neg);
+	return ((number * neg));
 }
 // void	test_ft_atoi(const char *str)
 // {

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:23:32 by pde-petr          #+#    #+#             */
-/*   Updated: 2025/02/10 16:28:11 by pde-petr         ###   ########.fr       */
+/*   Created: 2024/12/03 23:00:24 by pde-petr          #+#    #+#             */
+/*   Updated: 2025/02/11 16:25:12 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_printhexa(unsigned long int hexa, char type)
 {
-	if (lst != NULL && new != NULL)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	char	*hexa_tab;
+
+	if (type == 'x')
+		hexa_tab = HEXAMIN;
+	else
+		hexa_tab = HEXACAPS;
+	if (hexa < 16)
+		return (write(1, &hexa_tab[hexa], 1));
+	else
+		return (ft_printhexa(hexa / 16, type) + write(1, &hexa_tab[hexa % 16],
+				1));
 }
-
-

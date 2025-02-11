@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:43:38 by pde-petr          #+#    #+#             */
-/*   Updated: 2024/12/12 03:35:28 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:25:42 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *str, int *error);
 void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -67,5 +67,11 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+# define HEXACAPS "0123456789ABCDEF"
+# define HEXAMIN "0123456789abcdef"
+
+int					ft_printhexa(unsigned long int hexa, char type);
+int					ft_printf_format(char format, va_list arg);
+int					ft_printf(const char *format, ...);
 
 #endif

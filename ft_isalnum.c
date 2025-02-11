@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:51:34 by pde-petr          #+#    #+#             */
-/*   Updated: 2024/11/12 14:04:09 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:31:33 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
+	
 }

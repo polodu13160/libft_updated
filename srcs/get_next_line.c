@@ -6,14 +6,15 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 16:30:14 by pauldepetri       #+#    #+#             */
-/*   Updated: 2025/02/11 17:00:42 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:54:52 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-// #include <stdlib.h>
 // #include <unistd.h>
+// #include <fcntl.h>
 
 char	*get_next_line(int fd)
 {
@@ -31,9 +32,10 @@ char	*get_next_line(int fd)
 
 // char	*get_next_line(int fd);
 
-// int	main(void)
+// int	main(int argc, char **argv)
 // {
-// 	int fd = open("bible.txt", O_RDONLY);
+// 	(void)argc;
+// 	int fd = open(argv[1], O_RDONLY);
 // 	if (fd == -1)
 // 	{
 // 		perror("Erreur lors de l'ouverture du fichier");

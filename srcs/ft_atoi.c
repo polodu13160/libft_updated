@@ -6,7 +6,7 @@
 /*   By: pde-petr <pde-petr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:50:24 by pde-petr          #+#    #+#             */
-/*   Updated: 2025/01/30 18:05:11 by pde-petr         ###   ########.fr       */
+/*   Updated: 2025/03/22 02:34:09 by pde-petr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_atoi(const char *str, int *error)
 	}
 	return ((number * neg));
 }
+
 // void	test_ft_atoi(const char *str)
 // {
 // 	int	result;
